@@ -2,7 +2,19 @@ import mongoose from "mongoose";
 
 export async function connect() {
     try {
-        await mongoose.connect(process.env.MONGO_URI);
+        const uri = process.env.MONGO_URI;
+        if (!uri) {
+            throw new Error('MONGO_URI is not defined in environment variables');
+        }
+
+        // Set connection options to avoid long waits
+        const options = { 
+            useNewUrlParser: true, 
+            useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 5000 // 5 seconds timeout for server selection
+        };
+
+        await mongoose.connect(uri, options);
         const connection = mongoose.connection;
 
         connection.on('connected', () => {
@@ -13,9 +25,9 @@ export async function connect() {
             console.error('Database connection error:', error);
         });
 
-        return true; // Return true to indicate successful connection
+        return true;
     } catch (error) {
         console.error('Database connection error:', error);
-        return false; // Return false to indicate connection failure
+        return false;
     }
 }
