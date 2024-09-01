@@ -3,10 +3,19 @@
 import bcrypt from 'bcryptjs';
 import { connect } from '@/dbConfig/dbConfig';
 import User from '@/models/userModel';
-var jwt = require('jsonwebtoken');
-
+import jwt from 'jsonwebtoken';
 
 export default async function handler(req, res) {
+    // Handle CORS preflight request
+    if (req.method === 'OPTIONS') {
+        res.setHeader('Access-Control-Allow-Origin', '*'); // Adjust this to your frontend URL if necessary
+        res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+        res.status(200).end();
+        return;
+    }
+
+    // Handle main POST request
     if (req.method === 'POST') {
         await connect();
         try {
@@ -28,22 +37,22 @@ export default async function handler(req, res) {
             }
             if (match) {
 
-              const verfiedUser = user.isVerified
-                if(verfiedUser){
-                        const admin = user.isAdmin;
+              const verifiedUser = user.isVerified
+                if(verifiedUser){
+                    const admin = user.isAdmin;
+                    let token;
                     if(admin){
-                        var token = jwt.sign({ email: user.email, name: user.name,id:user._id,isAdmin:user.isAdmin },process.env.Token_SECERT,{ expiresIn: '1d' } );
-                        res.setHeader('Set-Cookie', `Token=${token}; Path=/; HttpOnly`);
-                        res.status(200).json({ success: true, token, message: `Welcome ${user.name}` });
-                    }else{
-                        var token = jwt.sign({ email: user.email,id:user._id, name: user.name },process.env.Token_SECERT,{ expiresIn: '1d' } );
-                        res.setHeader('Set-Cookie', `Token=${token}; Path=/; HttpOnly`);  
-                        res.status(200).json({ success: true, token, message: `Welcome ${user.name}` });
+                        token = jwt.sign({ email: user.email, name: user.name, id: user._id, isAdmin: user.isAdmin }, process.env.Token_SECERT, { expiresIn: '1d' });
+                    } else {
+                        token = jwt.sign({ email: user.email, id: user._id, name: user.name }, process.env.Token_SECERT, { expiresIn: '1d' });
                     }
-                    
-                    
-                    
-                }else{
+
+                    res.setHeader('Access-Control-Allow-Origin', '*'); // Adjust this to your frontend URL if necessary
+                    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+                    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+                    res.setHeader('Set-Cookie', `Token=${token}; Path=/; HttpOnly`);
+                    res.status(200).json({ success: true, token, message: `Welcome ${user.name}` });
+                } else {
                     res.status(400).json({ error: "Please verify your email" }); 
                 }
 
@@ -55,6 +64,9 @@ export default async function handler(req, res) {
             res.status(500).json({ error: 'Internal Server Error' });
         }
     } else {
-        res.status(405).json({ error: 'Method not allowed but api is working' });
+        res.setHeader('Access-Control-Allow-Origin', '*'); // Adjust this to your frontend URL if necessary
+        res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+        res.status(405).json({ error: 'Method not allowed but API is working' });
     }
 }
