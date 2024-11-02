@@ -51,7 +51,7 @@ const ContactUs = () => {
     }
   };
     return(<section
-   class="relative z-10 overflow-hidden bg-white dark:bg-dark py-20 lg:py-[120px]"
+   className="relative z-10 overflow-hidden bg-white dark:bg-dark py-20 lg:py-[120px]"
    >
   <ToastContainer
 position="top-center"
@@ -66,26 +66,26 @@ pauseOnHover
 theme="light"
 />
 
-   <div class="container mx-3">
-      <div class="flex flex-wrap -mx-4 lg:justify-between">
-         <div class="w-full px-4 lg:w-1/2 xl:w-6/12">
-            <div class="mb-12 max-w-[570px] lg:mb-0">
+   <div className="container mx-3">
+      <div className="flex flex-wrap -mx-4 lg:justify-between">
+         <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
+            <div className="mb-12 max-w-[570px] lg:mb-0">
               
                <h2
-                  class="text-dark dark:text-white mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]"
+                  className="text-dark dark:text-white mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]"
                   >
                   GET IN TOUCH WITH US
                </h2>
                <p
-                  class="text-base leading-relaxed text-body-color dark:text-dark-6 mb-9"
+                  className="text-base leading-relaxed text-body-color dark:text-dark-6 mb-9"
                   >
                   Thank you for your interest in Techeject. Whether you have questions about our insurance products, 
                   need assistance with your existing policy, or want to explore partnership opportunities, were here to help.
                    Get in touch with us using the following contact information:
                </p>
-               <div class="mb-8 flex w-full max-w-[370px]">
+               <div className="mb-8 flex w-full max-w-[370px]">
                   <div
-                     class="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]"
+                     className="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]"
                      >
                      <svg
                         width="32"
@@ -100,11 +100,11 @@ theme="light"
                            />
                      </svg>
                   </div>
-                  <div class="w-full">
-                     <h4 class="mb-1 text-xl font-bold text-dark dark:text-white">
+                  <div className="w-full">
+                     <h4 className="mb-1 text-xl font-bold text-dark dark:text-white">
                         Our Location
                      </h4>
-                     <p class="text-base text-body-color dark:text-dark-6">
+                     <p className="text-base text-body-color dark:text-dark-6">
                      Techeject Insurance Services
 123, Main Street
 City Name, State Name
@@ -113,9 +113,9 @@ India
                      </p>
                   </div>
                </div>
-               <div class="mb-8 flex w-full max-w-[370px]">
+               <div className="mb-8 flex w-full max-w-[370px]">
                   <div
-                     class="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]"
+                     className="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]"
                      >
                      <svg
                         width="32"
@@ -145,18 +145,18 @@ India
                         </defs>
                      </svg>
                   </div>
-                  <div class="w-full">
-                     <h4 class="mb-1 text-xl font-bold text-dark dark:text-white">
+                  <div className="w-full">
+                     <h4 className="mb-1 text-xl font-bold text-dark dark:text-white">
                         Phone Number
                      </h4>
-                     <p class="text-base text-body-color dark:text-dark-6">
+                     <p className="text-base text-body-color dark:text-dark-6">
                         18001800XXX
                      </p>
                   </div>
                </div>
-               <div class="mb-8 flex w-full max-w-[370px]">
+               <div className="mb-8 flex w-full max-w-[370px]">
                   <div
-                     class="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]"
+                     className="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]"
                      >
                      <svg
                         width="32"
@@ -171,11 +171,11 @@ India
                            />
                      </svg>
                   </div>
-                  <div class="w-full">
-                     <h4 class="mb-1 text-xl font-bold text-dark dark:text-white">
+                  <div className="w-full">
+                     <h4 className="mb-1 text-xl font-bold text-dark dark:text-white">
                         Email Address
                      </h4>
-                     <p class="text-base text-body-color dark:text-dark-6">
+                     <p className="text-base text-body-color dark:text-dark-6">
                      General Inquiries: info@techeject.com 
                      Customer Support: support@techeject.com
                      </p>
@@ -183,9 +183,9 @@ India
                </div>
             </div>
          </div>
-         <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
+         <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
             <div
-               class="relative p-8 bg-white rounded-lg shadow-lg dark:bg-dark-2 sm:p-12"
+               className="relative p-8 bg-white rounded-lg shadow-lg dark:bg-dark-2 sm:p-12"
                >
                 <form onSubmit={handleSubmit} method="POST">
                 <div className="mb-6">
@@ -234,7 +234,7 @@ India
                 </div>
               </form>
                <div>
-                  <span class="absolute -top-10 -right-9 z-[-1]">
+                  <span className="absolute -top-10 -right-9 z-[-1]">
                      <svg
                         width="100"
                         height="100"
@@ -243,14 +243,14 @@ India
                         xmlns="http://www.w3.org/2000/svg"
                         >
                         <path
-                           fill-rule="evenodd"
-                           clip-rule="evenodd"
+                           fillRule="evenodd"
+                           clipRule="evenodd"
                            d="M0 100C0 44.7715 0 0 0 0C55.2285 0 100 44.7715 100 100C100 100 100 100 0 100Z"
                            fill="#3056D3"
                            />
                      </svg>
                   </span>
-                  <span class="absolute -right-10 top-[90px] z-[-1]">
+                  <span className="absolute -right-10 top-[90px] z-[-1]">
                      <svg
                         width="34"
                         height="134"
@@ -470,7 +470,7 @@ India
                            />
                      </svg>
                   </span>
-                  <span class="absolute -left-7 -bottom-7 z-[-1]">
+                  <span className="absolute -left-7 -bottom-7 z-[-1]">
                      <svg
                         width="107"
                         height="134"

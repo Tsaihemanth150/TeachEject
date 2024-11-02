@@ -165,7 +165,7 @@
                     />
                   </div>
                 </div>
-                <div class="flex items-center">
+                <div className="flex items-center">
   <input
     className="appearance-none block w-auto my-3 px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
     name="voucher"
@@ -219,7 +219,7 @@
                     </select>
                   </div>
                 </div>
-                <div class="flex items-center">
+                <div className="flex items-center">
   <input
     className="appearance-none block w-auto my-3 px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
     name="voucher"
@@ -260,7 +260,7 @@
                     />
                   </div>
                 </div>
-                <div class="flex items-center">
+                <div className="flex items-center">
   <input
     className="appearance-none block w-auto my-3 px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
     name="voucher"
@@ -301,7 +301,7 @@
                     />
                   </div>
                 </div>
-                <div class="flex items-center">
+                <div className="flex items-center">
   <input
     className="appearance-none block w-auto my-3 px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
     name="voucher"
